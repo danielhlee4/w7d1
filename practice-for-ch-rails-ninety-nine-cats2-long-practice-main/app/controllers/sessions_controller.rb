@@ -11,10 +11,12 @@ class SessionsController < ApplicationController
         )
         if @user
             login!(@user)
-            redirect_to user_url(@user.id)
+            redirect_to cats_url
         else
             @user = User.new(username: params[:user][:username])
             render :new
         end
     end
+
+
 end
